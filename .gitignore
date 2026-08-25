@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Build artifacts / object files
+*.o
+*.a
+*.obj
+*.lib
+
+# LÖVE build output
+*.love
+*.zip
+
+# Large binary caches / logs
+*.log
+*.tmp
+*.swp
+*~
+*.orig
+
+# Python bytecode (tools/)
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
