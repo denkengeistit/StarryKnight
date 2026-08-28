@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="10" height="8" tilewidth="32" tileheight="32" infinite="0">
+ <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <tile id="0" />
+ </tileset>
+ <layer id="1" name="L1" width="10" height="8">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+</data>
+  <properties>
+   <property name="tile_color" value="0.1,0.1,0.2" />
+  </properties>
+ </layer>
+ <layer id="2" name="L2" width="10" height="8">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+</data>
+  <properties>
+   <property name="tile_color" value="0.25,0.2,0.35" />
+  </properties>
+ </layer>
+ <layer id="3" name="L3" width="10" height="8">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+</data>
+  <properties>
+   <property name="tile_color" value="0.4,0.35,0.45" />
+  </properties>
+ </layer>
+ <layer id="4" name="L4" width="10" height="8">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+</data>
+  <properties>
+   <property name="tile_color" value="0.55,0.5,0.55" />
+  </properties>
+ </layer>
+ <layer id="5" name="L5" width="10" height="8">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+</data>
+  <properties>
+   <property name="tile_color" value="0.7,0.65,0.65" />
+  </properties>
+ </layer>
+ <objectgroup id="1" name="L2_objects">
+  <object id="1" x="32" y="128" class="spawn" />
+ </objectgroup>
+ <objectgroup id="2" name="L4_objects">
+  <object id="2" x="160" y="128" class="skeleton">
+   <properties>
+    <property name="lvl" value="5" />
+   </properties>
+  </object>
+  <object id="3" x="224" y="128" class="enemy" />
+ </objectgroup>
+ <objectgroup id="3" name="misc">
+  <object id="4" x="96" y="128" class="xp">
+   <properties>
+    <property name="slice" value="5" />
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="10" height="8" tilewidth="32" tileheight="32" infinite="0">
+ <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <tile id="0" />
+ </tileset>
+ <layer id="1" name="back" width="10" height="8">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <layer id="2" name="front" width="10" height="8">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <objectgroup id="1" name="front_objects">
+  <object id="1" x="32" y="64" class="spawn" />
+  <object id="2" x="128" y="64" class="treasure_chest" />
+  <object id="3" x="192" y="64" class="npc" />
+ </objectgroup>
+</map>

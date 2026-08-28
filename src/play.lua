@@ -41,6 +41,11 @@ end
 local MAPS = {
   ["1"] = "assets.maps.cliffside_02", -- 4 slices
   ["3"] = "assets.maps.test_basic",
+  ["4"] = "assets.maps.stress_two_layer",
+  ["5"] = "assets.maps.stress_three_layer",
+  ["6"] = "assets.maps.stress_five_layer",
+  ["7"] = "assets.maps.stress_mixed_matching",
+  ["8"] = "assets.maps.stress_large_map",
 }
 
 local game

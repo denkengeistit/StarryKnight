@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="10" height="8" tilewidth="32" tileheight="32" infinite="0">
+ <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <tile id="0" />
+ </tileset>
+ <layer id="1" name="back" width="10" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0
+0,0,0,1,1,1,1,0,0,0
+0,0,0,0,0,0,0,0,0,0
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+</data>
+  <properties>
+   <property name="tile_color" value="0.2,0.3,0.4" />
+  </properties>
+ </layer>
+ <layer id="2" name="front" width="10" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0
+0,0,0,1,1,1,1,0,0,0
+0,0,0,0,0,0,0,0,0,0
+1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1
+</data>
+  <properties>
+   <property name="tile_color" value="0.5,0.6,0.7" />
+  </properties>
+ </layer>
+ <objectgroup id="1" name="front_objects">
+  <object id="1" x="64" y="128" class="spawn" />
+ </objectgroup>
+</map>
