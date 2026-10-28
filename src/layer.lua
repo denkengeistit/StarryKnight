@@ -42,8 +42,8 @@ function Layer.new(name, data)
   self.bg_color   = data.bg_color   or { 0.07, 0.07, 0.10 }
   self.spawn      = data.spawn      or { x = 64, y = 64 }
   -- NOTE: parallax/dim are no longer stored here; Play.draw derives them from
-  -- each layer's distance to the active slice so the same code handles 2-5
-  -- layers without per-map tuning.
+  -- each layer's distance to the active slice so the same code handles any
+  -- number of layers without per-map tuning.
 
   self.world = P.new_world(0, 1500)
   self.entities = { enemies = {}, pickups = {} }

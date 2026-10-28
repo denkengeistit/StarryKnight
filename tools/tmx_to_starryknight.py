@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Convert a Tiled TMX map to the StarryKnight Lua map format.
+"""LEGACY: for isometric maps use tools/iso_to_starryknight.py instead.
+
+Convert a Tiled TMX map to the StarryKnight Lua map format.
 
 Mapping model (matches the game's multi-plane depth system):
   - Each TMX *tile layer* becomes one depth slice, in TMX document order
@@ -16,7 +18,7 @@ Entity classes recognized (Tiled object class/type, case-insensitive):
 
 Engine constraints enforced here so bad maps fail at convert time, not in-game
 (see src/map.lua and src/layer.lua):
-  - 2 to 5 tile layers
+  - 2 to 5 tile layers (legacy limit; the engine itself no longer caps layers)
   - every slice must have non-empty tile data
   - tilesize should be 32 (the physics tuning assumes it); other sizes warn
 """

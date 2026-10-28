@@ -2,7 +2,7 @@
 -- and handles draw ordering. Layers are drawn back-to-front (index 1 = farthest
 -- from camera, index N = closest). Parallax and dim are computed dynamically
 -- from each layer's signed distance to the active depth, so the same logic
--- works for any map with 2-5 slices.
+-- works for any map with 2+ slices.
 local Assets = require("src.assets")
 local Map    = require("src.map")
 local Player = require("src.player")
@@ -26,6 +26,9 @@ local ALPHA_STEP    = 0.22
 local X_OFFSET_STEP = -18
 local Y_OFFSET_STEP = 18
 local MIN_ALPHA     = 0.25
+-- With many layers (iso-strip maps) only the active layer and this many
+-- neighbours each side are drawn; the rest would be invisible or off-screen.
+local DRAW_RADIUS   = 2
 
 local function depth_factors(i, active)
   if i == active then return 1.0, 1.0, 0, 0 end
@@ -40,7 +43,8 @@ end
 -- Map registry: which module path each hotkey loads.
 local MAPS = {
   ["1"] = "assets.maps.cliffside_02", -- 4 slices
-  ["3"] = "assets.maps.test_basic",
+  ["3"] = "assets.maps.iso_demo",     -- 7 strips from an iso map
+  ["9"] = "assets.maps.test_basic",
   ["4"] = "assets.maps.stress_two_layer",
   ["5"] = "assets.maps.stress_three_layer",
   ["6"] = "assets.maps.stress_five_layer",
@@ -116,6 +120,7 @@ function Play.draw()
 
   local active = game.map.active
   for i, layer in ipairs(game.map.layers) do
+    if math.abs(i - active) > DRAW_RADIUS then goto continue end
     local parallax, alpha, x_offset, y_offset = depth_factors(i, active)
     love.graphics.push()
     love.graphics.translate(
@@ -129,6 +134,7 @@ function Play.draw()
       game.combat:draw_inworld()
     end
     love.graphics.pop()
+    ::continue::
   end
 
   love.graphics.pop()
