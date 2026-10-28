@@ -1,0 +1,11 @@
+[Unit]
+Description=Pull StarryKnight main and rebuild the love.js web build
+After=network-online.target
+
+[Service]
+Type=oneshot
+# Adjust User= and the path to the checkout whose web/ Caddy serves.
+User=hark
+WorkingDirectory=/srv/starryknight/StarryKnight
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+ExecStart=/srv/starryknight/StarryKnight/tools/web/update_web.sh

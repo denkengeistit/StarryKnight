@@ -63,3 +63,11 @@ return {
 - **Parallax / dim**: computed dynamically from each layer's signed distance to the active slice (steps of 0.22), so the same draw code handles maps with 2, 3, 4, or 5 slices without any per-map tuning.
 - **Floor seams**: each row's contiguous run of solid tiles is collapsed into a single static rectangle body so the player can't snag on "ghost edges" between adjacent floor tiles.
 - **RPG**: each actor has `lvl`, `hp`, `dmg`, `def`. `maxHp = 10*lvl`, `dmg = 2+lvl`, `def = lvl-1`. Damage = `max(1, atk.dmg - tgt.def)`.
+
+## Play in the browser (love.js)
+
+A WebAssembly build is served from iris, **Tailscale-only** (dev use, never public). URL: `http://<iris-tailnet-name>:8088/` (set by the Caddy route; see `tools/web/Caddyfile.snippet`). Keyboard controls are the same as above; touch is not supported yet.
+
+- **Rebuild by hand:** `tools/build_web.sh` (needs node, npm, zip; installs love.js 11.4.1 into `.web-tools/` on first run). Output goes to `web/` (git-ignored).
+- **Automatic rebuild:** `tools/web/starryknight-web.timer` runs `tools/web/update_web.sh` every 2 minutes: `git pull --ff-only origin main`, then rebuilds only if HEAD changed. Install the units from `tools/web/` into systemd and adjust `User=` and the paths.
+- Note: love.js runs LÖVE 11.4 while `conf.lua` says 11.5; this has not been checked in a real browser from the build host.

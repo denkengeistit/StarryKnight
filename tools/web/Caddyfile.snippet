@@ -1,0 +1,9 @@
+# PRIVATE ONLY: bind to the Tailscale address (or put behind `tailscale serve`),
+# never a public listener. Replace 100.x.y.z with iris's tailnet IP.
+http://100.x.y.z:8088 {
+	bind 100.x.y.z
+	root * /srv/starryknight/StarryKnight/web
+	file_server
+	header Cross-Origin-Opener-Policy same-origin
+	header Cross-Origin-Embedder-Policy require-corp
+}

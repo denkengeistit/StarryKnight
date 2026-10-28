@@ -31,3 +31,8 @@ __pycache__/
 .vscode/
 .idea/
 *.code-workspace
+
+# Web build (tools/build_web.sh)
+/web/
+/web.new/
+/.web-tools/
