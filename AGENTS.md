@@ -58,3 +58,7 @@ python3 tools/test_converter_errors.py   # error-handling: wrong layer count, em
 ```
 
 See BUILD_LOG.md for the full design history and bug-fix timeline.
+
+## Lua version
+
+The web build (love.js) runs PUC Lua 5.1, not LuaJIT: no `goto`/labels, no `//`, no bitwise operators, no `utf8` library. Write Lua 5.1-compatible code and check with `luac5.1 -p <file>`; `tools/build_web.sh` refuses to build if any file fails that check.
