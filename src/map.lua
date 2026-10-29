@@ -1,15 +1,13 @@
 -- Map: wraps an ordered stack of parallel z-depth layers and tracks the active
--- one. Index 1 is the farthest from camera, index N is closest. Maps can have
--- between MIN_LAYERS and MAX_LAYERS slices, giving zone widths some variety
--- (like a real isometric ARPG world where some rooms are narrow and others
--- broad).
+-- one. Index 1 is the farthest from camera, index N is closest. Maps have at
+-- least MIN_LAYERS slices and no upper cap (iso-strip maps have one layer per
+-- strip; see docs/design/iso-strip-maps.md).
 local Layer = require("src.layer")
 
 local Map = {}
 Map.__index = Map
 
 Map.MIN_LAYERS = 2
-Map.MAX_LAYERS = 5
 
 function Map.new(path)
   local def = require(path)
@@ -19,9 +17,9 @@ function Map.new(path)
   assert(type(list) == "table",
     "Map " .. path .. " must define a 'layers' array")
   local n = #list
-  assert(n >= Map.MIN_LAYERS and n <= Map.MAX_LAYERS,
-    string.format("Map %s defines %d layers; must be between %d and %d",
-                  path, n, Map.MIN_LAYERS, Map.MAX_LAYERS))
+  assert(n >= Map.MIN_LAYERS,
+    string.format("Map %s defines %d layers; need at least %d",
+                  path, n, Map.MIN_LAYERS))
 
   local shared_ts = def.tilesize or 32
   self.layers = {}
