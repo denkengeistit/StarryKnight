@@ -9,6 +9,15 @@ OUT="${1:-$REPO/web}"
 TOOLS="${WEB_TOOLS_DIR:-$REPO/.web-tools}"
 LOVEJS_VERSION="${LOVEJS_VERSION:-11.4.1}"
 
+# love.js runs PUC Lua 5.1: no goto/labels, no integer division, etc.
+# Refuse to build if any .lua file fails a Lua 5.1 parse (needs luac5.1).
+if command -v luac5.1 >/dev/null 2>&1; then
+  ( cd "$REPO" && git ls-files '*.lua' | while read -r f; do luac5.1 -p "$f" || exit 1; done ) \
+    || { echo "build_web: Lua 5.1 syntax check failed; not building" >&2; exit 1; }
+else
+  echo "build_web: luac5.1 not found, skipping Lua 5.1 syntax check" >&2
+fi
+
 if [ ! -x "$TOOLS/node_modules/.bin/love.js" ]; then
   mkdir -p "$TOOLS"
   npm install --prefix "$TOOLS" --no-audit --no-fund "love.js@$LOVEJS_VERSION"

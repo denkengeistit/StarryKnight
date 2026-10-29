@@ -120,21 +120,22 @@ function Play.draw()
 
   local active = game.map.active
   for i, layer in ipairs(game.map.layers) do
-    if math.abs(i - active) > DRAW_RADIUS then goto continue end
-    local parallax, alpha, x_offset, y_offset = depth_factors(i, active)
-    love.graphics.push()
-    love.graphics.translate(
-      -game.camera.x * parallax + x_offset,
-      -game.camera.y * parallax + y_offset
-    )
-    layer:draw_tiles(alpha)
-    layer:draw_entities(alpha)
-    if i == active then
-      game.player:draw()
-      game.combat:draw_inworld()
+    -- love.js runs PUC Lua 5.1 (no goto), so guard with if instead of goto continue.
+    if math.abs(i - active) <= DRAW_RADIUS then
+      local parallax, alpha, x_offset, y_offset = depth_factors(i, active)
+      love.graphics.push()
+      love.graphics.translate(
+        -game.camera.x * parallax + x_offset,
+        -game.camera.y * parallax + y_offset
+      )
+      layer:draw_tiles(alpha)
+      layer:draw_entities(alpha)
+      if i == active then
+        game.player:draw()
+        game.combat:draw_inworld()
+      end
+      love.graphics.pop()
     end
-    love.graphics.pop()
-    ::continue::
   end
 
   love.graphics.pop()
