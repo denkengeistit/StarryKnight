@@ -672,3 +672,15 @@ Endgame:          Supernova (burst mode) OR Dwarf (tank mode) — permanent
 *This document is a living design spec. Once Andy answers the questions in
 [Section 9](#9-questions-for-andy), it will be updated and frozen for
 implementation.*
+
+---
+
+## 10. Andy's answers (2026-11-01)
+
+These supersede the draft wherever they conflict.
+
+- **Genre: roguelite with two layers of progression.** Replayability is the point. *Out of run:* the products of a run's outcome (supernova remnants, forged heavy elements, other end states) are collected and carried into meta-progression. *In run:* no traditional leveling at all (answers Q4 and Q5; shapes Q8).
+- **Two core in-run stats to start:** current hydrogen mass **M**, and its rate of change **dM/dt** (intake minus fusion burn). Everything else (HP, damage, defense, speed, pickup reach, and so on) derives from these two. There's no XP, no levels and no separate currency; hydrogen is constantly fusing into helium, so holding your size is a small economy.
+- **Real physics:** wherever possible, derive behaviour from real formulas and constants (e.g. mass-luminosity, fusion burn rate, gravitational pull), not invented numbers. Simplifications are fine where they make it playable.
+- **Mass acquisition via gravity:** stand over a defeated enemy for about a second and your gravity pulls its mass into you (no click-to-pick-up).
+- **Theme:** the player is a knight who is literally a star (the Starry Night pun). Enemies are cosmic: antimatter particles, black holes, nebulae and the like (replaces skeletons).
