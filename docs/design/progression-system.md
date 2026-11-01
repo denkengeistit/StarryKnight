@@ -689,3 +689,6 @@ These supersede the draft wherever they conflict.
   - **Iron**: spendable (exhaustible). A run that ends in **supernova** pays out iron.
   - **Gravity**: the permanent level-progression marker, equal to the sum of the masses of all your stable stars. A run that ends as a **dwarf or giant** pays out gravity.
   - Each run pays one or the other, depending on how it ends. (This makes iron a meta currency rather than the in-run "iron clock" of the draft's Q3.)
+- **Endings set by mass, steered by the player (answers Q2):** as in real stars, final mass decides the ending (roughly: under about 8 solar masses you go giant, then white dwarf; above that, core-collapse supernova, leaving a neutron star or black hole). The player's choice is how they manage M and dM/dt during the run: feed hard to cross the threshold and nova for iron, or hold under it and dwarf for gravity. Scale real thresholds to game units if needed, but keep the real relationships.
+- **Semi-educational goal:** the closer the algorithms are to real stellar physics, the better. Prefer real formulas, constants and thresholds (mass-luminosity, main-sequence lifetime, Chandrasekhar limit, etc.), and simplify only where playability demands it.
+- **No story yet (Q9):** make the gameplay loop shine first; narrative comes later.
