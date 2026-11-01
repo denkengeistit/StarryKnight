@@ -684,3 +684,8 @@ These supersede the draft wherever they conflict.
 - **Real physics:** wherever possible, derive behaviour from real formulas and constants (e.g. mass-luminosity, fusion burn rate, gravitational pull), not invented numbers. Simplifications are fine where they make it playable.
 - **Mass acquisition via gravity:** stand over a defeated enemy for about a second and your gravity pulls its mass into you (no click-to-pick-up).
 - **Theme:** the player is a knight who is literally a star (the Starry Night pun). Enemies are cosmic: antimatter particles, black holes, nebulae and the like (replaces skeletons).
+- **No falling back (answers Q1):** to hold your progress you either keep playing (taking in mass) or take the time to learn the economy sub-mechanic. Doing either one must be enough to avoid losing progress. A forced ratchet backwards isn't fun, so collapse drain must be counteractable.
+- **Two out-of-run currencies, for now (shapes Q2, Q3, Q5):**
+  - **Iron**: spendable (exhaustible). A run that ends in **supernova** pays out iron.
+  - **Gravity**: the permanent level-progression marker, equal to the sum of the masses of all your stable stars. A run that ends as a **dwarf or giant** pays out gravity.
+  - Each run pays one or the other, depending on how it ends. (This makes iron a meta currency rather than the in-run "iron clock" of the draft's Q3.)
