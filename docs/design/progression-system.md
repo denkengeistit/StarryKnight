@@ -693,3 +693,4 @@ These supersede the draft wherever they conflict.
 - **Semi-educational goal:** the closer the algorithms are to real stellar physics, the better. Prefer real formulas, constants and thresholds (mass-luminosity, main-sequence lifetime, Chandrasekhar limit, etc.), and simplify only where playability demands it.
 - **No story yet (Q9):** make the gameplay loop shine first; narrative comes later.
 - **Byproducts (Q6):** none for now. Iron is the only heavy element, and it's an out-of-run currency.
+- **Mass comes only from defeated enemies (makes Q7 moot):** hydrogen is never picked up from the landscape. You absorb it from defeated enemies by gravity, so there are no environmental element pickups (this replaces the draft's section 6 sources).
